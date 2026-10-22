@@ -1,0 +1,130 @@
+### ==========================================
+### STARTUP FINANCING PLATFORM - API TESTS
+### ==========================================
+
+
+### ==========================================
+### 1. HOME
+### ==========================================
+
+GET http://127.0.0.1:5000/
+
+
+### ==========================================
+### 2. API TEST
+### ==========================================
+
+GET http://127.0.0.1:5000/api/test
+
+
+### ==========================================
+### 3. SIGNUP - PITCHER
+### ==========================================
+
+### SIGNUP - FOUNDER
+
+POST http://127.0.0.1:5000/api/auth/signup
+Content-Type: application/json
+
+{
+    "email": "nikhil@gmail.com",
+    "password": "test123",
+    "role": "founder"
+}
+### ==========================================
+### 4. SIGNUP - INVESTOR
+### ==========================================
+
+### SIGNUP - INVESTOR
+
+POST http://127.0.0.1:5000/api/auth/signup
+Content-Type: application/json
+
+{
+    "email": "investor@gmail.com",
+    "password": "test123",
+    "role": "investor"
+}
+
+### ==========================================
+### 5. LOGIN - PITCHER
+### ==========================================
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "nikhil@gmail.com",
+    "password": "test123"
+}
+
+
+### ==========================================
+### 6. LOGIN - INVESTOR
+### ==========================================
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "investor@gmail.com",
+    "password": "test123"
+}
+
+
+### ==========================================
+### 7. AUTH CHECK
+### Replace YOUR_TOKEN with the token
+### received from LOGIN
+### ==========================================
+
+GET http://127.0.0.1:5000/api/auth/check
+Authorization: Bearer YOUR_TOKEN
+
+
+### ==========================================
+### 8. PROFILE
+### Replace YOUR_TOKEN
+### ==========================================
+
+GET http://127.0.0.1:5000/api/profile
+Authorization:JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4Njk3NzE4MCwianRpIjoiODUwNjRiZmMtZDc0NC00MjNmLWFlODItN2ZjYjUwNDMzMzI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODY5NzcxODAsImNzcmYiOiJiYmM3YTFmMy1iYWJjLTRjZDktYTQ3MC0wMGVjNWE5NWM3MjMiLCJleHAiOjE3ODY5NzgwODAsImVtYWlsIjoiaW52ZXN0b3JAZ21haWwuY29tIiwicm9sZSI6ImludmVzdG9yIn0.qMhCj70ahnWGHg0oPj4jslAGkfae6NcvH1hqQSYMRAc
+
+
+### ==========================================
+### 9. SEARCH - ALL
+### ==========================================
+
+GET http://127.0.0.1:5000/api/search
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4Njk3NzE4MCwianRpIjoiODUwNjRiZmMtZDc0NC00MjNmLWFlODItN2ZjYjUwNDMzMzI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODY5NzcxODAsImNzcmYiOiJiYmM3YTFmMy1iYWJjLTRjZDktYTQ3MC0wMGVjNWE5NWM3MjMiLCJleHAiOjE3ODY5NzgwODAsImVtYWlsIjoiaW52ZXN0b3JAZ21haWwuY29tIiwicm9sZSI6ImludmVzdG9yIn0.qMhCj70ahnWGHg0oPj4jslAGkfae6NcvH1hqQSYMRAc
+
+### ==========================================
+### 10. SEARCH - TECHNOLOGY
+### ==========================================
+
+GET http://127.0.0.1:5000/api/search?industry=technology
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4Njk3NzE4MCwianRpIjoiODUwNjRiZmMtZDc0NC00MjNmLWFlODItN2ZjYjUwNDMzMzI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODY5NzcxODAsImNzcmYiOiJiYmM3YTFmMy1iYWJjLTRjZDktYTQ3MC0wMGVjNWE5NWM3MjMiLCJleHAiOjE3ODY5NzgwODAsImVtYWlsIjoiaW52ZXN0b3JAZ21haWwuY29tIiwicm9sZSI6ImludmVzdG9yIn0.qMhCj70ahnWGHg0oPj4jslAGkfae6NcvH1hqQSYMRAc
+
+
+### ==========================================
+### 11. SEARCH - LOCATION
+### ==========================================
+
+GET http://127.0.0.1:5000/api/search?location=mumbai
+Authorization: Bearer YOUR_TOKEN
+
+
+### ==========================================
+### 12. SEARCH - QUERY
+### ==========================================
+
+GET http://127.0.0.1:5000/api/search?query=technology
+Authorization: Bearer YOUR_TOKEN
+
+
+### ==========================================
+### 13. SEARCH - MULTIPLE FILTERS
+### ==========================================
+
+GET http://127.0.0.1:5000/api/search?industry=technology&location=mumbai
+Authorization: Bearer YOUR_TOKEN

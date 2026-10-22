@@ -1,0 +1,21 @@
+{
+    "investor@gmail.com": {
+        "name": "Rahul",
+        "role": "INVESTOR",
+        "description": "Angel investor interested in technology startups.",
+        "location": "Mumbai",
+        "website": "https://example.com",
+        "investor_name": "Rahul Ventures",
+        "investor_type": "Angel Investor",
+        "industries": [
+            "Technology",
+            "FinTech"
+        ],
+        "min_investment": 1000000,
+        "max_investment": 10000000,
+        "preferred_stages": [
+            "Seed",
+            "Series A"
+        ]
+    }
+}
